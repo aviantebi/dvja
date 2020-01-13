@@ -16,7 +16,7 @@ pipeline {
    stage('Check dependencies') {
       steps {
       dependencyCheck additionalArguments: '', odcInstallation: 'Dependency-Check'
-      dependencyCheckPublisher pattern: ''
+dependencyCheckPublisher pattern: ''  
             }
                               }
     stage('Publish to S3') {
