@@ -16,8 +16,9 @@ pipeline {
    stage('Check dependencies') {
       steps {
       dependencyCheck additionalArguments: '', odcInstallation: 'Dependency-Check'
-dependencyCheckPublisher pattern: ''  
-      }
+      dependencyCheckPublisher pattern: ''
+            }
+                              }
     stage('Publish to S3') {
       steps {
         sh "aws s3 cp /var/lib/jenkins/workspace/dvja/target/dvja-1.0-SNAPSHOT.war s3://ako20-buildartifacts-133y7axx8e4v6/dvja-1.0-SNAPSHOT.war"
