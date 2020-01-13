@@ -33,6 +33,11 @@ dependencyCheckPublisher pattern: ''
       steps {
         cleanWs()
       }
+      post {
+    always {
+        archiveArtifacts artifacts: 'zap-report.html', fingerprint: true
+    }
+}
     }
   }
 }
